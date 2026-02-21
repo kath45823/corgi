@@ -9,6 +9,16 @@ const meta = {
             options: ["neutral", "brandNeutral"],
             control: "select",
         },
+        icon: {
+            table: {
+                type: {
+                    summary:
+                        "textOnly | trailingIcon | leadingIcon | bothIcons",
+                },
+            },
+            options: ["textOnly", "trailingIcon", "leadingIcon", "bothIcons"],
+            control: "select",
+        },
     },
     tags: ["autodocs"],
 } satisfies Meta<typeof Dropdown>;

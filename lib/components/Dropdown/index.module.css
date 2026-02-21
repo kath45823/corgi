@@ -19,14 +19,15 @@
 }
 
 .Icon {
-    width: 0.75rem;
-    height: 0.75rem;
+    aspect-ratio: 1 / 1;
     transition: transform 150ms ease-out;
+    color: inherit;
 }
 
 .Trigger {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     align-self: stretch;
     border: 0;
     outline: 0;
@@ -55,6 +56,12 @@
     &[data-panel-open] .Icon {
         transform: rotate(90deg);
     }
+}
+
+.TriggerContent {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .BrandNeutral .Trigger:hover {
