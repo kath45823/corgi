@@ -36,13 +36,39 @@
         "vite": "npm:rolldown-vite@latest",
         "vite-plugin-dts": "^4.5.4"
     },
-    "dependencies": {
-        "@base-ui-components/react": "^1.0.0-beta.1",
-        "@tailwindcss/vite": "^4.1.12",
-        "@untitledui/icons": "^0.0.19",
-        "cva": "^1.0.0-beta.4",
-        "motion": "^12.23.12",
-        "tailwind-merge": "^3.3.1",
-        "tailwindcss": "^4.1.12"
-    }
+    "exports": {
+        ".": {
+            "types": "./dist/main.d.ts",
+            "import": "./dist/main.js"
+        },
+        "./css": "./dist/corgi.css"
+    },
+    "files": [
+        "dist"
+    ],
+    "license": "(MIT OR Apache-2.0)",
+    "main": "dist/main.js",
+    "peerDependencies": {
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0"
+    },
+    "private": false,
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -b && vite build",
+        "build-storybook": "storybook build",
+        "check": "bun run check:ci -- --write --unsafe",
+        "check:ci": "biome check --no-errors-on-unmatched --files-ignore-unknown=true",
+        "preinstall": "npx only-allow bun",
+        "prepare": "bunx husky",
+        "prepublishOnly": "bun run build",
+        "storybook": "storybook dev -p 26744",
+        "syncpack": "syncpack lint",
+        "syncpack:fix": "syncpack format && syncpack fix-mismatches",
+        "syncpack:update": "syncpack update"
+    },
+    "type": "module",
+    "types": "dist/main.d.ts"
 }
