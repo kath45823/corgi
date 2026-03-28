@@ -28,11 +28,13 @@ type Story = StoryObj<typeof meta>;
 export const Neutral: Story = {
     args: {
         palette: "neutral",
+        icon: "textOnly",
     },
 };
 
 export const BrandNeutral: Story = {
     args: {
         palette: "brandNeutral",
+        icon: "textOnly",
     },
 };
